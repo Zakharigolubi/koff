@@ -11,12 +11,12 @@
 
   &__container {
     display: grid;
-    grid-template-areas: "title" "content" "form" "place";
+    grid-template-areas: 'title' 'content' 'form' 'place';
 
     @media (min-width: 880px) {
       grid-template-columns: 1fr 302px;
       gap: 40px 30px;
-      grid-template-areas: "title ." "content place" "form form";
+      grid-template-areas: 'title .' 'content place' 'form form';
       justify-content: space-between;
     }
 
@@ -60,17 +60,17 @@
     grid-template-columns: 25vw min-content 1fr;
     grid-template-rows: min-content min-content 1fr;
     grid-template-areas:
-      "img title title"
-      "img article article"
-      "img control price";
+      'img title title'
+      'img article article'
+      'img control price';
 
     @media (min-width: 480px) {
       grid-template-columns: 120px 1fr min-content;
       gap: 6px 12px;
       grid-template-areas:
-        "img title price"
-        "img article article"
-        "img control .";
+        'img title price'
+        'img article article'
+        'img control .';
     }
 
     @media (min-width: 880px) {
@@ -159,12 +159,16 @@
     }
   }
 
+  &_form-order {
+    grid-column: 1/-1;
+  }
+
   &__subtitle {
     font-size: 16px;
     font-weight: 400;
     margin-bottom: 16px;
 
-    &_form-order {
+    &-order {
       grid-column: 1/-1;
     }
 
