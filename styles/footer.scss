@@ -22,7 +22,7 @@
     }
   }
 
-  &__logo {
+  &__link-logo {
     width: 230px;
 
     @media (min-width: 580px) {
@@ -41,13 +41,13 @@
     }
   }
 
-  &__developer-list {
+  &__contacts-list {
     @media (min-width: 580px) {
       grid-column: 1/2;
     }
   }
 
-  &__developer-item {
+  &__contacts-item {
     margin-bottom: 8px;
 
     &:last-child {
