@@ -3,9 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+
+    <link
+      rel="preload"
+      href="/fonts/inter-v13-cyrillic_latin-regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/open-sans-v36-cyrillic_latin-700.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/open-sans-v36-cyrillic_latin-regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Мебельный маркет Koff</title>
-    <script type="module" src="/main.js" defer></script>
+    <script type="module" src="/main.js"></script>
   </head>
 
   <body>
@@ -36,14 +59,14 @@
             >
               <path
                 d="M7.66665 13.9999C11.1644 13.9999 14 11.1644 14 7.66659C14 4.16878 11.1644 1.33325 7.66665 1.33325C4.16884 1.33325 1.33331 4.16878 1.33331 7.66659C1.33331 11.1644 4.16884 13.9999 7.66665 13.9999Z"
-                stroke="#1C1C1C"
+                stroke="currentColor"
                 stroke-width="1.5"
                 stroke-linecap="round"
                 stroke-linejoin="round"
               />
               <path
                 d="M14.6666 14.6666L13.3333 13.3333"
-                stroke="#1C1C1C"
+                stroke="currentColor"
                 stroke-width="1.5"
                 stroke-linecap="round"
                 stroke-linejoin="round"
@@ -127,7 +150,11 @@
               <a href="/category?slug=Диваны" class="catalog__link">Диваны</a>
             </li>
             <li class="catalog__item">
-              <a href="/category?slug=Шкафы" class="catalog__link">Шкафы</a>
+              <a
+                href="/category?slug=Шкафы"
+                class="catalog__link catalog__link-active"
+                >Шкафы</a
+              >
             </li>
             <li class="catalog__item">
               <a href="/category?slug=Стулья" class="catalog__link">Стулья</a>
@@ -159,22 +186,22 @@
         </div>
       </div>
 
-      <div class="breadcrumps">
+      <div class="breadcrumbs">
         <div class="container">
-          <ul class="breadcrumps__list">
+          <ul class="breadcrumbs__list">
             <li class="breadcrumps__item">
-              <a href="/" class="breadcrumps__link">Главная</a>
+              <a href="/" class="breadcrumbs__link">Главная</a>
               <span class="breadcrumps__separator">&gt;</span>
             </li>
-            <li class="breadcrumps__item">
-              <a href="/caregory?/slug=Кресла" class="breadcrumps__link"
+            <li class="breadcrumbs__item">
+              <a href="/caregory?/slug=Кресла" class="breadcrumbs__link"
                 >Кресла</a
               >
-              <span class="breadcrumps__separator">&gt;</span>
+              <span class="breadcrumbs__separator">&gt;</span>
             </li>
-            <li class="breadcrumps__item">
-              <a class="breadcrumps__link">Кресло с подлокотниками</a>
-              <span class="breadcrumps__separator">&gt;</span>
+            <li class="breadcrumbs__item">
+              <a class="breadcrumbs__link">Кресло с подлокотниками</a>
+              <span class="breadcrumbs__separator">&gt;</span>
             </li>
           </ul>
         </div>
@@ -186,7 +213,7 @@
           <ul class="goods__list">
             <li class="goods__items">
               <article class="goods__card card">
-                <a href="/product" class="card__link">
+                <a href="/product" class="card__link card__link-img">
                   <img
                     src="/img/photo.jpg"
                     alt="Кресло с подлокотниками"
@@ -194,13 +221,54 @@
                   />
                 </a>
 
-                <h3 class="card__title">
-                  <a href="/product" class="card__link"
-                    >Кресло с подлокотниками</a
-                  >
-                </h3>
+                <div class="card__info">
+                  <h3 class="card__title">
+                    <a href="/product" class="card__link"
+                      >Кресло с подлокотниками</a
+                    >
+                  </h3>
+                  <p class="card__price">5&nbsp;000&nbsp;₽</p>
+                </div>
 
-                <p class="card__price">5&nbsp;000&nbsp;₽</p>
+                <button class="card__btn" type="button">В корзину</button>
+
+                <button class="card__favorite" type="button">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                  >
+                    <path
+                      d="M8.41331 13.8733C8.18665 13.9533 7.81331 13.9533 7.58665 13.8733C5.65331 13.2133 1.33331 10.46 1.33331 5.79332C1.33331 3.73332 2.99331 2.06665 5.03998 2.06665C6.25331 2.06665 7.32665 2.65332 7.99998 3.55998C8.67331 2.65332 9.75331 2.06665 10.96 2.06665C13.0066 2.06665 14.6666 3.73332 14.6666 5.79332C14.6666 10.46 10.3466 13.2133 8.41331 13.8733Z"
+                      fill="white"
+                      stroke="#1C1C1C"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </button>
+              </article>
+            </li>
+            <li class="goods__items">
+              <article class="goods__card card">
+                <a href="/product" class="card__link card__link-img">
+                  <img
+                    src="/img/photo.jpg"
+                    alt="Кресло с подлокотниками"
+                    class="card__image"
+                  />
+                </a>
+
+                <div class="card__info">
+                  <h3 class="card__title">
+                    <a href="/product" class="card__link"
+                      >Кресло с подлокотниками</a
+                    >
+                  </h3>
+                  <p class="card__price">5&nbsp;000&nbsp;₽</p>
+                </div>
 
                 <button class="card__btn" type="button">В корзину</button>
 
@@ -233,52 +301,14 @@
                   />
                 </a>
 
-                <h3 class="card__title">
-                  <a href="/product" class="card__link"
-                    >Кресло с подлокотниками</a
-                  >
-                </h3>
-
-                <p class="card__price">5&nbsp;000&nbsp;₽</p>
-
-                <button class="card__btn" type="button">В корзину</button>
-
-                <button class="card__favorite" type="button">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    fill="none"
-                  >
-                    <path
-                      d="M8.41331 13.8733C8.18665 13.9533 7.81331 13.9533 7.58665 13.8733C5.65331 13.2133 1.33331 10.46 1.33331 5.79332C1.33331 3.73332 2.99331 2.06665 5.03998 2.06665C6.25331 2.06665 7.32665 2.65332 7.99998 3.55998C8.67331 2.65332 9.75331 2.06665 10.96 2.06665C13.0066 2.06665 14.6666 3.73332 14.6666 5.79332C14.6666 10.46 10.3466 13.2133 8.41331 13.8733Z"
-                      fill="white"
-                      stroke="#1C1C1C"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </button>
-              </article>
-            </li>
-            <li class="goods__items">
-              <article class="goods__card card">
-                <a href="/product" class="card__link">
-                  <img
-                    src="/img/photo.jpg"
-                    alt="Кресло с подлокотниками"
-                    class="card__image"
-                  />
-                </a>
-
-                <h3 class="card__title">
-                  <a href="/product" class="card__link"
-                    >Кресло с подлокотниками</a
-                  >
-                </h3>
-
-                <p class="card__price">5&nbsp;000&nbsp;₽</p>
+                <div class="card__info">
+                  <h3 class="card__title">
+                    <a href="/product" class="card__link"
+                      >Кресло с подлокотниками</a
+                    >
+                  </h3>
+                  <p class="card__price">5&nbsp;000&nbsp;₽</p>
+                </div>
 
                 <button class="card__btn">В корзину</button>
 
@@ -311,52 +341,14 @@
                   />
                 </a>
 
-                <h3 class="card__title">
-                  <a href="/product" class="card__link"
-                    >Кресло с подлокотниками</a
-                  >
-                </h3>
-
-                <p class="card__price">5&nbsp;000&nbsp;₽</p>
-
-                <button class="card__btn">В корзину</button>
-
-                <button class="card__favorite">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    fill="none"
-                  >
-                    <path
-                      d="M8.41331 13.8733C8.18665 13.9533 7.81331 13.9533 7.58665 13.8733C5.65331 13.2133 1.33331 10.46 1.33331 5.79332C1.33331 3.73332 2.99331 2.06665 5.03998 2.06665C6.25331 2.06665 7.32665 2.65332 7.99998 3.55998C8.67331 2.65332 9.75331 2.06665 10.96 2.06665C13.0066 2.06665 14.6666 3.73332 14.6666 5.79332C14.6666 10.46 10.3466 13.2133 8.41331 13.8733Z"
-                      fill="white"
-                      stroke="#1C1C1C"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </button>
-              </article>
-            </li>
-            <li class="goods__items">
-              <article class="goods__card card">
-                <a href="/product" class="card__link">
-                  <img
-                    src="/img/photo.jpg"
-                    alt="Кресло с подлокотниками"
-                    class="card__image"
-                  />
-                </a>
-
-                <h3 class="card__title">
-                  <a href="/product" class="card__link"
-                    >Кресло с подлокотниками</a
-                  >
-                </h3>
-
-                <p class="card__price">5&nbsp;000&nbsp;₽</p>
+                <div class="card__info">
+                  <h3 class="card__title">
+                    <a href="/product" class="card__link"
+                      >Кресло с подлокотниками</a
+                    >
+                  </h3>
+                  <p class="card__price">5&nbsp;000&nbsp;₽</p>
+                </div>
 
                 <button class="card__btn">В корзину</button>
 
@@ -575,7 +567,7 @@
         </div>
       </section>
 
-      <section class="cart">
+      <section class="cart" hidden>
         <div class="container cart__container">
           <h2 class="cart__title">Корзина</h2>
           <ul class="cart__products">
@@ -755,7 +747,7 @@
         </a>
 
         <div class="footer__contacts contacts">
-          <a href="tel:+7 (939) 839 12 97" class="contacts__phone">
+          <a href="tel:+7(939)8391297" class="contacts__phone">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
